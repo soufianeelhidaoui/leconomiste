@@ -1,0 +1,11 @@
+setuptools==57.5.0
+scrapy_selenium
+python-csv
+scrapy
+argparse
+numpy
+pandas
+matplotlib
+xlrd
+xmltodict
+demjson
