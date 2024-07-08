@@ -8,6 +8,7 @@ import scrapy
 class LeconomisteItem(scrapy.Item):
     title = scrapy.Field()
     link = scrapy.Field()
+    category = scrapy.Field()
     author = scrapy.Field()
     date_published = scrapy.Field()
     image_url = scrapy.Field()

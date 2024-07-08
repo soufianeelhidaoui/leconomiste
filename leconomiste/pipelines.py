@@ -2,8 +2,8 @@ import csv
 
 class LeconomistePipeline:
     def open_spider(self, spider):
-        self.file = open('articles.csv', 'a', encoding='utf-8-sig', newline='')
-        self.fieldnames = ['title', 'link', 'author', 'date_published', 'image_url', 'content']
+        self.file = open('articless.csv', 'w', encoding='utf-8-sig', newline='')
+        self.fieldnames = ['title', 'link', 'author', 'date_published', 'image_url', 'content', 'category']
         self.writer = csv.DictWriter(self.file, fieldnames=self.fieldnames, delimiter=';')
 
         if self.file.tell() == 0:
@@ -13,5 +13,5 @@ class LeconomistePipeline:
         self.file.close()
 
     def process_item(self, item, spider):
-        self.writer.writerow(item)
+        self.writer.writerow(dict(item))  # Converting item to dict to write to CSV
         return item
